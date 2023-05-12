@@ -42,6 +42,6 @@ class Completion:
     def _submit_request(self, session: requests.Session, payload: dict) -> str:
         """Submit the request to the API and return the response."""
 
-        response = session.post(
-            "https://cocalc.com/api/v2/openai/chatgpt", json=payload).json()
-        return response
+        return session.post(
+            "https://cocalc.com/api/v2/openai/chatgpt", json=payload
+        ).json()

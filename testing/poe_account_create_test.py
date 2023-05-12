@@ -12,11 +12,11 @@ solver = TwoCaptcha('72747bf24a9d89b4dcc1b24875efd358')
 
 
 class Account:
-    def create(proxy: None or str = None, logging: bool = False, enable_bot_creation: bool = False):
+    def create(self, logging: bool = False, enable_bot_creation: bool = False):
         client = TLS(client_identifier='chrome110')
-        client.proxies = {
-            'http': f'http://{proxy}',
-            'https': f'http://{proxy}'} if proxy else None
+        client.proxies = (
+            {'http': f'http://{self}', 'https': f'http://{self}'} if self else None
+        )
 
         mail_client = Emailnator()
         mail_address = mail_client.get_mail()
